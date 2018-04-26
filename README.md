@@ -13,8 +13,8 @@ This tool outputs a simple title and sub-menu in your Mac OS menu bar with healt
 ## Configuration
 
 Inside the function `buildInterface`
-  1. You need to edit the title, line 40: `local title = { "myService" }`
-  2. You need to edit the table `loadBalancerMonitored` that you want to monitor
+  1. You need to edit the title, line 42: `local title = { "myService" }`
+  2. You need to edit the table, line 44 `loadBalancerMonitored` that you want to monitor
 
   Example:
   ```
@@ -27,6 +27,8 @@ Inside the function `buildInterface`
    * region: Region where the ELB is located
    * regionShort: Region where the ELB is located. This value is used for the title and sub-menu
    * loadBalancerName: The loadbalancer health to monitor
+   
+   3. You can also change the timer tick, line 70 ` hs.timer.doEvery(300, constructInterface)`
 
 ## Tool running
 
