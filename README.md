@@ -1,4 +1,4 @@
-# AWS load balancer healthy state menu bar for Mac OS
+# AWS load balancer health state as a menu bar for Mac OS
 
 This tool outputs a simple title and sub-menu in your Mac OS menu bar with health status of your instances in the defined ELBs.
 
@@ -16,17 +16,16 @@ Inside the function `buildInterface`
   1. You need to edit the title, line 42: `local title = { "myService" }`
   2. You need to edit the table, line 44 `loadBalancerMonitored` that you want to monitor
 
-  Example:
-  ```
-  		local loadBalancerMonitored = {
-			{ profile = "default", region = "eu-west-1", regionShort = "EU", loadBalancerName = "myLoadBalancer" }
-		}
-   ```
+```
+local loadBalancerMonitored = {
+  { profile = "default", region = "eu-west-1", regionShort = "EU", loadBalancerName = "myLoadBalancer" }
+}
+```
 
-   * profile: The AWS profile to use while calling the AWS API
+   * profile: The AWS profile to use when calling the AWS API
    * region: Region where the ELB is located
    * regionShort: Region where the ELB is located. This value is used for the title and sub-menu
-   * loadBalancerName: The loadbalancer health to monitor
+   * loadBalancerName: The loadbalancer instances state to monitor
    
    3. You can also change the timer tick, line 70 ` hs.timer.doEvery(300, constructInterface)`
 
